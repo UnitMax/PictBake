@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PictBake</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <p class="eyebrow">Offline converter</p>
+        <h1>PictBake</h1>
+        <p class="intro">Right-click an image to save it as PNG or JPEG.</p>
+      </header>
+
+      <dl class="settings-summary">
+        <div>
+          <dt>Default</dt>
+          <dd id="summary-format">PNG</dd>
+        </div>
+        <div>
+          <dt>JPEG</dt>
+          <dd id="summary-jpeg">0.92, #ffffff</dd>
+        </div>
+        <div>
+          <dt>Folder</dt>
+          <dd id="summary-folder">PictBake</dd>
+        </div>
+        <div>
+          <dt>Save prompt</dt>
+          <dd id="summary-save-as">No</dd>
+        </div>
+      </dl>
+
+      <div class="actions">
+        <button type="button" id="open-converter" class="primary-button">Open Converter</button>
+        <button type="button" id="open-options" class="secondary-button">Options</button>
+      </div>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

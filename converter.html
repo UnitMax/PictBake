@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PictBake Converter</title>
+    <link rel="stylesheet" href="converter.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Local and offline</p>
+          <h1>PictBake Converter</h1>
+        </div>
+        <p class="intro">Convert a local WebP or other browser-supported image to PNG or JPEG inside Chrome.</p>
+      </header>
+
+      <section class="workspace" aria-label="Image converter">
+        <div id="drop-zone" class="drop-zone" tabindex="0">
+          <strong>Drop an image here</strong>
+          <span>or choose a local file. No upload happens.</span>
+          <input id="file-input" type="file" accept="image/*,.webp,.avif">
+        </div>
+
+        <form id="converter-form" class="controls">
+          <label class="field">
+            <span>Output format</span>
+            <select id="output-format">
+              <option value="png">PNG</option>
+              <option value="jpeg">JPEG</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>JPEG quality <output id="quality-value">0.92</output></span>
+            <input id="jpeg-quality" type="range" min="0.60" max="1.00" step="0.01">
+          </label>
+
+          <label class="field field-inline">
+            <span>JPEG background color</span>
+            <input id="jpeg-background-color" type="color">
+          </label>
+
+          <div class="selected-file">
+            <span class="label">Selected</span>
+            <span id="selected-file-name">No file selected</span>
+          </div>
+
+          <div class="actions">
+            <button id="convert-button" type="submit" class="primary-button" disabled>Convert</button>
+            <button id="download-button" type="button" class="secondary-button" disabled>Download</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="result-section" class="result-section" hidden>
+        <div class="preview-wrap">
+          <img id="result-preview" alt="Converted image preview">
+        </div>
+        <p id="result-meta" class="result-meta"></p>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="converter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PictBake Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">PictBake</p>
+          <h1>Options</h1>
+        </div>
+        <p class="privacy-note">All conversion runs locally in Chrome.</p>
+      </header>
+
+      <form id="options-form" class="settings-panel">
+        <label class="field">
+          <span>Default format</span>
+          <select id="default-format" name="defaultFormat">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>JPEG quality <output id="quality-value">0.92</output></span>
+          <input id="jpeg-quality" name="jpegQuality" type="range" min="0.60" max="1.00" step="0.01">
+        </label>
+
+        <label class="field field-inline">
+          <span>JPEG background color</span>
+          <input id="jpeg-background-color" name="jpegBackgroundColor" type="color">
+        </label>
+
+        <label class="check-field">
+          <input id="save-as" name="saveAs" type="checkbox">
+          <span>Ask where to save each file</span>
+        </label>
+
+        <label class="field">
+          <span>Output folder prefix</span>
+          <input id="output-folder-prefix" name="outputFolderPrefix" type="text" placeholder="PictBake">
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary-button">Save</button>
+          <button type="button" id="reset-button" class="secondary-button">Reset to defaults</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
