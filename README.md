@@ -87,3 +87,7 @@ Open the options page from the popup or Chrome extension details. Available sett
 ## Development Notes
 
 This project intentionally has no `npm install`, no build command, and no generated bundle. Edit the files directly and reload the unpacked extension in Chrome.
+
+## License
+
+PictBake is licensed under the MIT License. See `LICENSE` for details.
